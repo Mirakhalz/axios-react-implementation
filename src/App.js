@@ -1,44 +1,12 @@
-import React from "react";
-//Add the imports here
-import { Formik, Form, Field } from "formik";
-import { useCookies } from "react-cookie";
+import React from 'react'
+import MyComponent from './MyComponent'
 
-const App = () => {
-  // Declare the variables here
-
+function App() {
   return (
-    <Formik
-      initialValues={{
-        name: "",
-        email: "",
-      }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          setCookie("name", values.name, { path: "/" });
-          localStorage.setItem(localStorageKey, values.email);
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
-      }}
-    >
-      {({ isSubmitting }) => (
-        <Form>
-          <label htmlFor="name">Name</label>
-          <Field type="text" name="name" />
+    <div>
+      
+    </div>
+  )
+}
 
-          <label htmlFor="email">Email Address</label>
-          <Field type="email" name="email" />
-
-          <button type="submit" disabled={isSubmitting}>
-            Submit
-          </button>
-        </Form>
-      )}
-    </Formik>
-  );
-
-};
-
-export default App;
-const [cookies, setCookie] = useCookies(["name"]);
-const localStorageKey = "email";
+export default App
